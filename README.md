@@ -4,7 +4,7 @@
   
   ## View Program ##
   
-  ![Screenshot of the application](./images/screenshot.png)
+  ![Screenshot of the application](./Images/screenshot.png)
 
   * [Heroku Link](https://fierce-atoll-85440.herokuapp.com/)
 
