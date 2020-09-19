@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 jsonNotes = require('./db/db.json')
 
 const app = express();
@@ -35,7 +35,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-    console.log(res);
+    // console.log(res);
     let id = parseInt(req.params.id);
     let note = jsonNotes.find( ({ id }) => id === JSON.parse(req.params.id));
 
