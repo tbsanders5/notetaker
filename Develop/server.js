@@ -1,11 +1,10 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const { json } = require('express');
-const port = 8080;
+const PORT = 8080;
+jsonNotes = require('./db/db.json')
 
 const app = express();
-jsonNotes = require('./db/db.json')
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -36,6 +35,8 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.delete('/api/notes/:id', (req, res) => {
+    console.log(res);
+    let id = parseInt(req.params.id);
     let note = jsonNotes.find( ({ id }) => id === JSON.parse(req.params.id));
 
     jsonNotes.splice( jsonNotes.indexOf(note), 1);
